@@ -1,5 +1,5 @@
 
-
+//test
 
 $(document).ready(function () {
     client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt");
