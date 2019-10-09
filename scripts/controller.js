@@ -1,4 +1,3 @@
-//wss://test.mosquitto.org:8081/mqtt
 
 
 
@@ -14,11 +13,9 @@ $(document).ready(function () {
    
 
 
-    var timestamp = new Date($.now());
-
     $('#btnOn').click(function () {
         let topic = 'sharmen/device/status';
-        let payload = 'Turned On '+timestamp
+        let payload = 'Turned On '+new Date($.now())
         client.publish(topic, payload)
         $('p').text('The device is currently turned on')
         $('#btnOn').attr('disabled',true)
@@ -27,7 +24,7 @@ $(document).ready(function () {
 
     $('#btnOff').click(function () {
         let topic = 'sharmen/device/status';
-        let payload = 'Turned Off '+timestamp
+        let payload = 'Turned Off '+new Date($.now())
         client.publish(topic, payload)
         $('p').text('The device is currently turned off')
         $('#btnOn').attr('disabled',false)
